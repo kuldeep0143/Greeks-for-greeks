@@ -1,0 +1,20 @@
+class Solution{
+    //Function to find the leaders in the array.
+    static void leaders(int arr[], int n){
+        // Your code here
+        int largest= Integer.MIN_VALUE;
+        int j=0;
+        int b[]=new int[n];
+        for(int i=n-1;i>=0;i--){
+            
+            if(arr[i]>largest){
+                largest =arr[i];
+                b[j++]=arr[i];
+            }
+        }
+        for( j=j-1;j>=0;j--){
+            
+            System.out.print(b[j]);
+        }
+    }
+}
