@@ -1,0 +1,9 @@
+class Solution {
+    int getSingle(int nums[], int n) {
+        int ans=0; //since XOR with 0 returns same number 
+        for(int i=0; i<n; i++){
+            ans ^= nums[i];  // ans = (ans) XOR (array element at i) 
+        }
+        return ans;  
+    }
+}
