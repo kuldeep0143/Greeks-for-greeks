@@ -1,0 +1,26 @@
+class Solution {
+    public static ArrayList<Integer> getDistinctDifference(int N, int[] A) {
+      // code here
+        ArrayList<Integer> result=new ArrayList<>();
+        HashMap<Integer,Integer> map=new HashMap<>();
+        HashSet<Integer> list=new HashSet<>();
+        for(int i:A){
+            map.put(i,map.getOrDefault(i,0)+1);
+        }
+        for(int i:A){
+            int Rightcount,Leftcount;
+            if(map.get(i)>1){
+                Rightcount=map.size();
+                map.put(i,map.get(i)-1);
+            }else{
+                Rightcount=map.size()-1;
+                map.remove(i);
+            }
+            Leftcount=list.size();
+            int diff=Leftcount-Rightcount;
+            result.add(diff);
+            list.add(i);
+        }
+        return result;
+    }
+}
