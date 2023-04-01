@@ -1,0 +1,12 @@
+class Solution {
+    public long minOperations(int N) {
+        // Code here
+     long ans=0;
+      
+        ans = N/2;
+        ans*=(N+1)/2;
+        return ans;
+        
+        
+    }
+}
