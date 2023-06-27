@@ -1,0 +1,28 @@
+set<int> set;
+    
+    while (head1 != nullptr) {
+        set.insert(head1->data);
+        head1 = head1->next;
+    }
+    
+    while (head2 != nullptr) {
+        set.insert(head2->data);
+        head2 = head2->next;
+    }
+    
+    Node* curr = nullptr;
+    Node* start = nullptr;
+    
+    for (int x : set) {
+        if (start == nullptr) {
+            start = new Node(x);
+            curr = start;
+        } else {
+            curr->next = new Node(x);
+            curr = curr->next;
+        }
+    }
+    
+    return start;
+    }
+};
